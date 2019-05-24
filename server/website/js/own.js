@@ -226,16 +226,14 @@ function loginclick(){
 	  $("#password").focus(); 
 	  return false; 
 	} 
-	document.getElementById("myDiv").innerHTML="123";
-	xmlhttp.onreadystatechange=function()
-	{
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	  {
-		document.getElementById("myDiv").innerHTML=txt;
-	  }
-	}
-	xmlhttp.open("POST","./php/login_process",true);
-	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xmlhttp.send("username="+user+"&password="+pass);
+	//document.getElementById("myDiv").innerHTML="123";
+	$.ajax({
+		type: "POST",
+		url: "./php/login_process.php",
+		data: "username="+user+"&password="+pass,
+		success: function(msg){
+			alert(msg);
+		}
+	});
 	
   }

@@ -1,12 +1,12 @@
+use multimonitor;
+CREATE TABLE IF NOT EXISTS `user`(
+`id` INT UNSIGNED AUTO_INCREMENT KEY ,
+`username` VARCHAR(20) NOT NULL UNIQUE ,
+`password` CHAR(32) NOT NULL,
+`email` VARCHAR(50) NOT NULL UNIQUE ,
+`sex` ENUM('man','woman','baomi') NOT NULL DEFAULT 'baomi' 
+);
 
-CREATE TABLE `user` ( 
- `id` int(11) NOT NULL auto_increment, 
- `username` varchar(30) NOT NULL COMMENT '用户名', 
- `password` varchar(32) NOT NULL COMMENT '密码', 
- `login_time` int(10) default NULL COMMENT '登录时间', 
- `login_ip` varchar(32) default NULL COMMENT '登录IP', 
- `login_counts` int(10) NOT NULL default '0' COMMENT '登录次数', 
- PRIMARY KEY (`id`) 
-) ENGINE=MyISAM DEFAULT CHARSET=utf8; 
-
-
+INSERT INTO user ( id, username,password,email,sex)
+                       VALUES
+                       ( 1,"Test account",md5("123456"),"test@test.com","man");

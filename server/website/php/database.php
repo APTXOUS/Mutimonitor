@@ -1,12 +1,12 @@
 <?php
     function getConnect() {
         $hosthome = 'localhost';
-        $database = 'NodeMcu';
+        $database = 'multimonitor';
         $userName = 'root';
-        $password = 'yyy19980425';
+        $password = 'rootpwd';
         $mysqli = new mysqli($hosthome, $userName, $password,$database);
         if (mysqli_connect_errno()){
-            echo "连接失败，原因为：".mysqli_connect_error();
+            echo "mysql error".mysqli_connect_error();
             exit();
             }
         $result = $mysqli->query ("set names gbk");
