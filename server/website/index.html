@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+
+    <!-- Material Design Icon -->
+    <link rel="stylesheet" href="assets/fonts/material-design/css/materialdesignicons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="assets/plugin/waves/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="assets/plugin/sweet-alert/sweetalert.css">
+
+    <!-- Morris Chart -->
+    <link rel="stylesheet" href="assets/plugin/chart/morris/morris.css">
+
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="assets/plugin/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
+
+    <!-- Dark Themes -->
+    <link rel="stylesheet" href="assets/styles/style-black.min.css">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/own.js"></script>
+
+    <style>
+        .container1 {
+            width: 450px;
+            height: 450px;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+
+        }
+
+        .container {
+            display: table;
+            height: 100%;
+        }
+
+        .row {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        /* centered columns styles */
+        .row-centered {
+            text-align: center;
+        }
+
+        .col-centered {
+            display: inline-block;
+            float: none;
+            text-align: left;
+            margin-right: -4px;
+        }
+
+        .title {
+            font-size: 50px;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="container">
+        <div class="row row-centered">
+            <div class="col-md-6 ">
+                <div id="jsi-particle-container" class="container1"></div>
+            </div>
+            <div class="col-md-6 col-centered up-align-text ">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="title"><i class="ico mdi mdi-cube-outline"></i>MutiMonitor</p>
+                <form action="../php/login_process.php" method="POST">
+                    邮箱：
+                    <div class="input-group-add">
+                        <input type="text" name="userName" class="form-control" placeholder="请输入注册的邮箱">
+                        <br>
+                    </div>
+
+                    密码：
+                    <div class="input-group-add ">
+                        <input type="password" name="password" class="form-control" size="20" maxlength="15">
+                        <br>
+                    </div>
+                    <div class="col-md-6 col-centered up-align-text ">
+                            <input class="btn btn-default btn-rounded btn-bordered btn-lg t" type="submit" value="登陆">
+                    </div>
+                    <div class="col-md-6 col-centered up-align-text ">
+                        <input class="btn btn-default btn-rounded btn-bordered btn-lg" type="button"
+                            onclick="window.location.href='register.html'" value="注册">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/modernizr.min.js"></script>
+    <script src="assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/plugin/nprogress/nprogress.js"></script>
+    <script src="assets/plugin/sweet-alert/sweetalert.min.js"></script>
+    <script src="assets/plugin/waves/waves.min.js"></script>
+
+    <!-- Morris Chart -->
+    <script src="assets/plugin/chart/morris/morris.min.js"></script>
+    <script src="assets/plugin/chart/morris/raphael-min.js"></script>
+    <script src="assets/scripts/chart.morris.black.init.min.js"></script>
+
+    <!-- Flot Chart -->
+    <script src="assets/plugin/chart/plot/jquery.flot.min.js"></script>
+    <script src="assets/plugin/chart/plot/jquery.flot.tooltip.min.js"></script>
+    <script src="assets/plugin/chart/plot/jquery.flot.categories.min.js"></script>
+    <script src="assets/plugin/chart/plot/jquery.flot.pie.min.js"></script>
+    <script src="assets/plugin/chart/plot/jquery.flot.stack.min.js"></script>
+    <script src="assets/scripts/chart.flot.black.init.min.js"></script>
+
+    <!-- Sparkline Chart -->
+    <script src="assets/plugin/chart/sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/scripts/chart.sparkline.init.min.js"></script>
+
+    <!-- FullCalendar -->
+    <script src="assets/plugin/moment/moment.js"></script>
+    <script src="assets/plugin/fullcalendar/fullcalendar.min.js"></script>
+    <script src="assets/scripts/fullcalendar.init.js"></script>
+
+    <script src="assets/scripts/main.min.js"></script>
+</body>
+
+
+
+</html>
