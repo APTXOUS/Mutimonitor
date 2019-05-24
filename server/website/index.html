@@ -95,26 +95,27 @@
                 <br>
                 <br>
                 <p class="title"><i class="ico mdi mdi-cube-outline"></i>MutiMonitor</p>
-                <form action="../php/login_process.php" method="POST">
+                <!-- <form action="./php/login_process.php" method="POST"> -->
                     邮箱：
                     <div class="input-group-add">
-                        <input type="text" name="userName" class="form-control" placeholder="请输入注册的邮箱">
+                        <input type="text" name="userName" id="userName" class="form-control" placeholder="请输入注册的邮箱">
                         <br>
                     </div>
 
                     密码：
                     <div class="input-group-add ">
-                        <input type="password" name="password" class="form-control" size="20" maxlength="15">
+                        <input type="password" name="password" id="password"  class="form-control" size="20" maxlength="15">
                         <br>
                     </div>
                     <div class="col-md-6 col-centered up-align-text ">
-                            <input class="btn btn-default btn-rounded btn-bordered btn-lg t" type="submit" value="登陆">
+                            <input class="btn login_btn btn-default btn-rounded btn-bordered btn-lg" type="submit" onclick="loginclick()" value="登陆">
                     </div>
                     <div class="col-md-6 col-centered up-align-text ">
-                        <input class="btn btn-default btn-rounded btn-bordered btn-lg" type="button"
+                        <input class="btn  btn-default btn-rounded btn-bordered btn-lg" type="button"
                             onclick="window.location.href='register.html'" value="注册">
                     </div>
-                </form>
+                    <div id ="myDiv"></div>
+                <!-- </form> -->
             </div>
 
         </div>
