@@ -1,7 +1,7 @@
 
 <?php
     session_start();
-    header('Content-Type:text/html; charset=gb2312;');
+    header('Content-Type:text/html;');
     include_once("database.php");
     // $userName = $_POST['userName'];
     // $password = $_POST['password'];
@@ -14,12 +14,12 @@
     $row=$result->fetch_assoc();
     if($row["count(*)"]==1)
     {
-        $_SESSION["uid"] = $userName;
-        echo "login success";
+        $_SESSION["uid"] = $username;
+        echo "success";
     }
     else
     {
-        echo "login error";
+        echo "error";
     }
     $mysqli->close();
 ?>
