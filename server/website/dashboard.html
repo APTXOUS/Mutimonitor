@@ -10,6 +10,12 @@
 
     <title>Home</title>
 
+    <style>
+        .d_tabbox {
+            border-style: none;
+        }
+    </style>
+
     <!-- Main Styles -->
     <link rel="stylesheet" href="assets/styles/style.min.css">
 
@@ -49,13 +55,13 @@
             <a href="index.html" class="logo"><i class="ico mdi mdi-cube-outline"></i>MutiMonitor</a>
             <button type="button" class="button-close fa fa-times js__menu_close"></button>
             <div class="user">
-                <div id = "userinfo">
+                <div id="userinfo">
                     <a href="#" class="avatar"><img src="assets/images/avatar-sm-5.jpg" alt=""><span
                             class="status online"></span></a>
                     <h5 class="name"><a href="profile.html">
                             <p id="username_p"></p>
                         </a></h5>
-                    <h5 class="position" id ="email_h5">Adminirator</h5>
+                    <h5 class="position" id="email_h5">Adminirator</h5>
                 </div>
                 <!-- /.name -->
                 <div class="control-wrap js__drop_down">
@@ -78,16 +84,16 @@
                 <h5 class="title">Navigation</h5>
                 <!-- /.title -->
                 <ul class="menu js__accordion">
-                    <li class="current">
-                        <a class="waves-effect" href="#dashboard" data-toggle="tab" ><i
+                    <li class="active">
+                        <a class="waves-effect" href="#dashboard" data-toggle="tab"><i
                                 class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
                     </li>
                     <li>
-                        <a class="waves-effect" href="#cloudserver"data-toggle="tab"><i
+                        <a class="waves-effect" href="#cloudserver" data-toggle="tab"><i
                                 class="menu-icon mdi mdi-calendar"></i><span>Cloud Server</span></a>
                     </li>
                     <li>
-                        <a class="waves-effect" href="servicelist" data-toggle="tab"><i
+                        <a class="waves-effect" href="#servicelist" data-toggle="tab"><i
                                 class="menu-icon mdi mdi-calendar"></i><span>Service List</span></a>
                     </li>
                     <li>
@@ -104,7 +110,8 @@
                         <!-- /.sub-menu js__content -->
                     </li>
                     <li>
-                        <a class="waves-effect" href="chatroom" data-toggle="tab"><i class="menu-icon mdi mdi-email"></i><span>Chat
+                        <a class="waves-effect" href="#chatroom" data-toggle="tab"><i
+                                class="menu-icon mdi mdi-email"></i><span>Chat
                                 Room</span><span class="notice notice-danger">New</span></a>
                     </li>
                 </ul>
@@ -140,20 +147,32 @@
         <!-- /.pull-right -->
     </div>
     <!-- /.fixed-navbar -->
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade in active" id="dashboard">
-            <p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
-        </div>
-        <div class="tab-pane fade" id="cloudserver">
-            <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple 
-                TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
-        </div>
-        <div class="tab-pane fade" id="servicelist">
-            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
-        </div>
-        <div class="tab-pane fade" id="chatroom">
-            <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
-            </p>
+    <div id="wrapper">
+        <div class="main-content">
+            <div class="row small-spacing">
+                <div class="col-xs-12">
+                    <div class="box-content">
+                        <h4 class="box-title">实时检测 Activity</h4>
+                        <!-- /.box-title -->
+                        <div class="dropdown js__drop_down">
+                            <a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else there</a></li>
+                                <li class="split"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                            <!-- /.sub-menu -->
+                        </div>
+                        <!-- /.dropdown js__dropdown -->
+                        <div id="flotcontainer" class="flot-chart" style="height: 320px"></div>
+                        <!-- /#flot-chart-1.flot-chart -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-xs-12 -->
+            </div>
         </div>
     </div>
 
@@ -175,6 +194,7 @@
 
     <!-- Flot Chart -->
     <script src="assets/plugin/chart/plot/jquery.flot.min.js"></script>
+    <script src="assets/plugin/chart/plot/jquery.flot.time.js"></script>
     <script src="assets/plugin/chart/plot/jquery.flot.tooltip.min.js"></script>
     <script src="assets/plugin/chart/plot/jquery.flot.categories.min.js"></script>
     <script src="assets/plugin/chart/plot/jquery.flot.pie.min.js"></script>
