@@ -56,11 +56,23 @@ function GetData() {
 		var y = Math.random() * 100;
 		var tt=now += updateInterval;
 		var temp = [tt, y];
-		data.push(temp);
-		y = Math.random() * 100;
-		temp = [tt, y];
-		data2.push(temp);
-      
+        data.push(temp);
+        $.ajax({
+            type: "POST",
+            url: "./php/dashboard.php",
+            data: JSON.stringify({
+                command: "cpu"// 注意不要在此行增加逗号
+            }),
+            dataType: "json",
+            success: function (msg) {
+                y = Math.random() * 100;
+                temp = [tt, y];
+                data2.push(temp);
+                alert(msg);
+              
+            }
+        });
+
 	}
 	
 	
@@ -119,6 +131,11 @@ var options = {
 };
  
 $(document).ready(function () {
+    for(var n = 0; n < 50; n++){
+        data[n] = 0;
+        data2[n] = 0;
+    }
+
     GetData();
  
     dataset = [

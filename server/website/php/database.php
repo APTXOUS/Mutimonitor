@@ -3,7 +3,7 @@
         $hosthome = 'localhost';
         $database = 'multimonitor';
         $userName = 'root';
-        $password = 'rootpwd';
+        $password = '114514';
         $mysqli = new mysqli($hosthome, $userName, $password,$database);
         if (mysqli_connect_errno()){
             echo "mysql error".mysqli_connect_error();

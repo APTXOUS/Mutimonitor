@@ -232,7 +232,8 @@ function loginclick() {
 		url: "./php/login_process.php",
 		data: "username=" + user + "&password=" + pass,
 		success: function (msg) {
-			if (msg=="\nsuccess")
+			alert(msg);
+			if (msg=="success")
 			{
 				window.location.href = "dashboard.html";
 			}

@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     header('Content-Type:text/html;');
@@ -19,7 +18,7 @@
     }
     else
     {
-        echo "error";
+        echo "error".$_SESSION["uid"];
     }
     $mysqli->close();
 ?>
