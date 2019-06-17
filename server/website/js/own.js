@@ -232,13 +232,12 @@ function loginclick() {
 		url: "./php/login_process.php",
 		data: "username=" + user + "&password=" + pass,
 		success: function (msg) {
-			alert(msg);
 			if (msg=="success")
 			{
 				window.location.href = "dashboard.html";
 			}
 			else
-				alert("登陆失败"+msg);
+				;
 		}
 	});
 }

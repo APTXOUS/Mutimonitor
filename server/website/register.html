@@ -1,14 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>用户登录</title>
-    <!-- Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="assets/plugin/waves/waves.min.css">
     <style>
         /*web background*/
         .container {
@@ -36,67 +40,59 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row row-centered">
-            <div class="well col-md-6 col-centered">
 
-                <h2>用户注册</h2>
-                <hr>
-                <form name="infoform" action="./php/register.php" method="POST" enctype="multipart/form-data"
-                    onsubmit="return validate_form(this)">
+    <div id="single-wrapper">
+        <form class="frm-single" name="infoform" action="./php/register.php" method="POST" enctype="multipart/form-data"
+            onsubmit="return validate_form(this)">
+            <div class="inside">
+                <div class="title"><strong>Multi</strong>Monitor</div>
+                <!-- /.title -->
+                <div class="frm-title">Register</div>
+                <!-- /.frm-title -->
+                <div class="frm-input"><input type="text" placeholder="Username" class="frm-inp" name="uname"><i
+                        class="fa fa-user frm-ico"></i></div>
+                <!-- /.frm-input -->
 
-                    用户名：<input type="text" name="uname" class="form-control" placeholder="">
-
-                    性别：
-                    <select name="usex" id="usex" class="form-control">
+                <div class="frm-input">
+                    <select name="usex" id="usex" class="form-control frm-inp">
                         <option value="man">男</option>
                         <option value="woman">女</option>
                     </select>
-                    邮箱：<input type="text" name="umail" class="form-control" placeholder="">
-                    密码：<input type="password" name="upwd" class="form-control" placeholder="">
-
-                    <input class="btn btn-default" type="submit" name="submit" value="提交">
-                    <input class="btn btn-default" type="reset" name="cancel" value="重写">
-                </form>
-            </div>
-        </div>
+                </div>
+                <div class="frm-input"><input type="email" placeholder="Email" class="frm-inp" name="umail"><i
+                        class="fa fa-envelope frm-ico"></i></div>
+                <!-- /.frm-input -->
+                <div class="frm-input"><input type="password" placeholder="Password" class="frm-inp" name="upwd"><i
+                        class="fa fa-lock frm-ico"></i></div>
+                <!-- /.clearfix -->
+                <button type="submit" class="frm-submit">Register<i class="fa fa-arrow-circle-right"></i></button>
+                <button type="reset" class="frm-submit">Reset</button>
+                <!-- /.row -->
+                <a href="index.html" class="a-link"><i class="fa fa-sign-in"></i>Already have account? Login.</a>
+                <div class="frm-footer"><strong>Multi</strong>Monitor © 2019.</div>
+        </form>
     </div>
+    <!-- .inside -->
+    </form>
+    <!-- /.frm-single -->
+    </div>
+    <!--/#single-wrapper -->
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+		<script src="assets/script/html5shiv.min.js"></script>
+		<script src="assets/script/respond.min.js"></script>
+	<![endif]-->
+    <!-- 
+	================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/modernizr.min.js"></script>
+    <script src="assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugin/nprogress/nprogress.js"></script>
+    <script src="assets/plugin/waves/waves.min.js"></script>
 
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="assets/scripts/main.min.js"></script>
 </body>
-
-
-
-<script>
-
-
-    function validate_form(thisform) {
-        var x = document.forms["infoform"]["uname"].value;
-        if (x == null || x == "") {
-            alert("用户名必须填写");
-            return false;
-        }
-  
-        x = document.forms["infoform"]["umail"].value;
-        var atpos = x.indexOf("@");
-        var dotpos = x.lastIndexOf(".");
-        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-            alert("不是一个有效的 e-mail 地址");
-            return false;
-        }
-        x = document.getElementById("upwd").value;
-        if (x == null || x == "") {
-            alert("密码必须填写");
-            return false;
-        }
-        alert("提交成功");
-        return true;
-    }
-</script>
 
 </html>
