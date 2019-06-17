@@ -44,12 +44,13 @@
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
-    <script type="text/javascript" src="js/dash.js"></script>
+    <!-- <script type="text/javascript" src="js/dash.js"></script> -->
+    <script type="text/javascript" src="js/chatroom.js"></script>
 </head>
 
 
 
-<body onload="getuserinfo();">
+<body onload="getserviceinfo();getuserinfo();" id="body">
     <div class="main-menu">
         <header class="header">
             <a href="index.html" class="logo"><i class="ico mdi mdi-cube-outline"></i>MutiMonitor</a>
@@ -144,81 +145,97 @@
         <!-- /.pull-right -->
     </div>
     <!-- /.fixed-navbar -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content invoice-box">
+                <table>
+                    <tr class="top">
+                        <td colspan="2">
+                            <table>
+                                <tr id="serviceinfo" name="serviceinfo">
+                                    <td class="title">
+                                        <a href="#" class="logo">Ninja<span>Admin</span></a>
+                                    </td>
+
+                                    <td>
+                                        Invoice #: 123<br>
+                                        Created: January 1, 2015<br>
+                                        Due: February 1, 2015
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="information">
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td id="serviceintro" name="serviceintro">
+                                        Next Step Webs, Inc.<br>
+                                        12345 Sunny Road<br>
+                                        Sunnyville, TX 12345
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr class="heading" id="title_head">
+                        <td>
+                            Serverlist 服务器列表
+                        </td>
+                    </tr>
+                   
+                    <tr class="heading">
+                        <td>
+                            MyServerlist 我的服务器列表
+                        </td>
+                    </tr>
+
+                </table>
+                <div class="modal-footer">
+
+                    <div class="form-group margin-bottom-20">
+                        <select class="form-control" id="myserverlist">
+                            <option value="">Nothing selected</option>
+                            <option value="1">Dropdown 1</option>
+                            <option value="2">Dropdown 1</option>
+                            <option value="3">Dropdown 1</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-submit-prj btn-info">应用至服务器</button>
+                    <button type="button" class="btn btn-default"data-dismiss="modal"  >关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
     <div id="wrapper">
         <div class="main-content">
+
             <div class="row small-spacing">
-                    <div class="box-content">
-                <div class="prj-header margin-bottom-30">
-                    
-                    <a href="#" class="btn btn-info btn-submit-prj btn-sm waves-effect waves-light">Submit Project</a>
-                    <div class="result-count">130 Projects</div>
-                    <!-- /.result-count -->
-                    <ul class="filters">
-                        <li><a class="active" href="#">All</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">API Wrappers</a></li>
-                        <li><a href="#">Apps</a></li>
-                        <li><a href="#">Others</a></li>
-                    </ul>
-                    <!-- /.filters -->
-                </div>
-                <div class="prj-list row">
-                        <div class="col-lg-4 col-md-6 col-xs-12 margin-bottom-30">
-                                <a href="#" class="prj-item">
-                                    <div class="top-project-section">
-                                        <div class="project-icon">
-                                            <img src="assets/images/logo/logo-1.png" alt="">
-                                        </div>
-                                        <h3>Bold Meida</h3>
-                                        <div class="meta">
-                                            <p class="author">
-                                                by <span>Bold Meida</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="bottom-project-section">
-                                        <div class="meta">
-                                            <div class="points">
-                                                <i class="fa fa-heart-o"></i> 407
-                                            </div>
-                                            <div class="views">
-                                                <i class="fa fa-eye"></i> 40.6k
-                                            </div>
-                                            <span class="feedable-time timeago">2 years ago</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-xs-12 margin-bottom-30">
-                                    <a href="#" class="prj-item">
-                                        <div class="top-project-section">
-                                            <div class="project-icon">
-                                                <img src="assets/images/logo/logo-2.png" alt="">
-                                            </div>
-                                            <h3>Helperia</h3>
-                                            <div class="meta">
-                                                <p class="author">
-                                                    by <span>Helperia</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="bottom-project-section">
-                                            <div class="meta">
-                                                <div class="points">
-                                                    <i class="fa fa-heart-o"></i> 265
-                                                </div>
-                                                <div class="views">
-                                                    <i class="fa fa-eye"></i> 16.5k
-                                                </div>
-                                                <span class="feedable-time timeago">about a year ago</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                <div class="box-content">
+                    <div class="prj-header margin-bottom-30">
+
+                        <a href="#" class="btn btn-info btn-submit-prj btn-sm waves-effect waves-light">Submit
+                            Project</a>
+                        <div class="result-count">130 Projects</div>
+                        <!-- /.result-count -->
+                        <ul class="filters" id="type" name="type">
+                            <li><a class="active" href="#">All</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">API Wrappers</a></li>
+                            <li><a href="#">Apps</a></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                        <!-- /.filters -->
+                    </div>
+                    <div class="prj-list row" name="servicelist" id="servicelist">
 
 
+                    </div>
                 </div>
-            </div>
 
                 <!-- /.col-xs-12 -->
             </div>
