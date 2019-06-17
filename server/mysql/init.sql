@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `service`(
 `servicename` VARCHAR(1024),
 `creator` VARCHAR(1024),
 `time` VARCHAR(1024),
+`introduction` VARCHAR(4096),
 `shell` VARCHAR(4096)
 );
 
@@ -52,6 +53,17 @@ CREATE TABLE IF NOT EXISTS `server_service`(
 
 
 
-INSERT INTO user ( id, username,password,email,sex)
+INSERT INTO service (servicename, creator,time,shell)
+                       VALUES
+                       ("Apache服务","admin",now(),"yum install apache2 -y");
+INSERT INTO service (servicename, creator,time,shell)
+                       VALUES
+                       ("Nginx服务","admin",now(),"yum install nginx -y");
+INSERT INTO service (servicename, creator,time,shell)
+                       VALUES
+                       ("Python3+pip","admin",now(),"curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py;sudo python get-pip.py" );
+
+
+INSERT INTO user ( username,password,email,sex)
                        VALUES
                        ( 1,"Test account",md5("123456"),"test@test.com","man");
