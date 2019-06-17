@@ -68,7 +68,7 @@ function GetData() {
                 y = Math.random() * 100;
                 temp = [tt, y];
                 data2.push(temp);
-                alert(msg);
+                //alert(msg);
               
             }
         });

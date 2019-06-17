@@ -3,13 +3,13 @@
         $hosthome = 'localhost';
         $database = 'multimonitor';
         $userName = 'root';
-        $password = '114514';
+        $password = '123456';
         $mysqli = new mysqli($hosthome, $userName, $password,$database);
         if (mysqli_connect_errno()){
             echo "mysql error".mysqli_connect_error();
             exit();
             }
-        $result = $mysqli->query ("set names gbk");
+        $result = $mysqli->query ("set names utf8");
         return  $mysqli;
     }
 
