@@ -154,3 +154,16 @@ $(document).ready(function () {
  
     update();
 });
+
+function getmeminfo()
+{
+    var nv = document.getElementById("memstatus");
+    nv.value= parseInt(+nv.value+Math.random() * 100-50).toString();
+}
+
+
+
+
+function getinfo(){
+   var t2 = window.setInterval(getmeminfo,1000); 
+};
