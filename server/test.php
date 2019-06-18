@@ -9,7 +9,7 @@ function functionName($com)
     $curl = curl_init();
 
     curl_setopt($curl, CURLOPT_PORT, 8000);
-    curl_setopt($curl, CURLOPT_URL, '119.28.139.244/running');
+    curl_setopt($curl, CURLOPT_URL, '0.0.0.0/running');
 
     curl_setopt($curl, CURLOPT_HEADER, 1);
 
@@ -39,7 +39,7 @@ function functionName($com)
 
 <body>
 
-<div name = "input_div" id="input_div" style="position:absolute;left:400px;top:180px">
+<div name = "input_div" id="input_div" style="position:absolute;left:800px;top:180px">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"> 
     指令：<input type="text" name="inst_input"><br>
 <input type="submit">

@@ -72,7 +72,10 @@ INSERT INTO user ( username,password,email,sex)
 
 INSERT INTO server ( servername,ownerid,ip,port)
                        VALUES
-                       ("Test server",1,"119.29.139.244","8080");
+                       ("Test server",1,"119.28.139.244","8080");
+INSERT INTO server ( servername,ownerid,ip,port)
+                       VALUES
+                       ("localhost",1,"0.0.0.0","8000");
 
 INSERT INTO server_service ( server_id,service_id)
                        VALUES

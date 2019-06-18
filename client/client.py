@@ -24,9 +24,7 @@ def do_login():
     
 
 
-    com="su nerd -c \""
-    com+=command
-    com+= " \""
+    com=command
     if check_login(username, password):
         a,b = commands.getstatusoutput(com)
         return b

@@ -164,9 +164,9 @@
                     </div>
                     <!-- /.dropdown js__dropdown -->
                     <div class="card-content">
-                        <ul class="notice-list">
+                        <ul class="notice-list" id="serverlist">
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <span class="avatar bg-success"><i class="glyphicon glyphicon-user"></i></span>
                                     <span class="name">Test server</span>
                                     <span class="desc">192.168.1.116: 8000</span>
@@ -174,7 +174,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <span class="avatar bg-success"><i class="glyphicon glyphicon-user"></i></span>
                                     <span class="name">cloud server</span>
                                     <span class="desc">192.168.2.224: 8000</span>
@@ -351,9 +351,7 @@
                         <!-- /.dropdown js__dropdown -->
                         <div class="text-center">
                             <div class="knob-wrap">
-                                <input class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2"
-                                    data-fgColor="#00bf4f" data-angleOffset=-125 data-angleArc=250
-                                    data-rotation=anticlockwise value="35" />
+                                <input class="knob_cpu"  />
                             </div>
                             <!-- .knob-wrap -->
                         </div>
@@ -379,15 +377,14 @@
                         <!-- /.dropdown js__dropdown -->
                         <div class="text-center">
                             <div class="knob-wrap">
-                                <input  id="memstatus"class="knob" data-width="150" data-height="150" data-bgColor="#ebeff2"
-                                    data-fgColor="#f60e0e" data-angleOffset=90 data-linecap=round value="80" />
+                                <input  id="memstatus"class="knob_mem"/>
                             </div>
                             <!-- .knob-wrap -->
                         </div>
                     </div>
                     <!-- /.box-content -->
                 </div>
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-12 col-md-12">
                     <div class="box-content">
                         <h4 class="box-title">Line Chart</h4>
                         <!-- /.box-title -->
@@ -409,9 +406,9 @@
                     </div>
                     <!-- /.box-content -->
                 </div>
-                <div class="col-lg-6 col-xs-12">
+                <div class="col-lg-12 col-xs-12">
                     <div class="box-content">
-                        <h4 class="box-title">Purchases</h4>
+                        <h4 class="box-title">Service</h4>
                         <!-- /.box-title -->
                         <div class="dropdown js__drop_down">
                             <a href="#"
@@ -430,82 +427,19 @@
                             <table class="table table-striped margin-bottom-10">
                                 <thead>
                                     <tr>
-                                        <th style="width:40%;">Product</th>
-                                        <th>Price</th>
-                                        <th>Date</th>
-                                        <th>State</th>
+                                        <th style="width:40%;">PID</th>
+                                        <th>TTY</th>
+                                        <th>TIME</th>
+                                        <th>CMD</th>
                                         <th style="width:5%;"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id='threadlist'>
                                     <tr>
                                         <td>Amaza Themes</td>
                                         <td>$71</td>
                                         <td>Nov 12,2016</td>
                                         <td class="text-success">Completed</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Macbook</td>
-                                        <td>$142</td>
-                                        <td>Nov 10,2016</td>
-                                        <td class="text-danger">Cancelled</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Samsung TV</td>
-                                        <td>$200</td>
-                                        <td>Nov 01,2016</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ninja Admin</td>
-                                        <td>$200</td>
-                                        <td>Oct 28,2016</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Galaxy Note 5</td>
-                                        <td>$200</td>
-                                        <td>Oct 28,2016</td>
-                                        <td class="text-success">Completed</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>CleanUp Themes</td>
-                                        <td>$71</td>
-                                        <td>Oct 22,2016</td>
-                                        <td class="text-success">Completed</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Facebook WP Plugin</td>
-                                        <td>$10</td>
-                                        <td>Oct 15,2016</td>
-                                        <td class="text-success">Completed</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Iphone 7</td>
-                                        <td>$100</td>
-                                        <td>Oct 12,2016</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nova House</td>
-                                        <td>$100</td>
-                                        <td>Oct 12,2016</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Repair Cars</td>
-                                        <td>$35</td>
-                                        <td>Oct 12,2016</td>
-                                        <td class="text-warning">Pending</td>
                                         <td><a href="#"><i class="fa fa-plus-circle"></i></a></td>
                                     </tr>
                                 </tbody>
